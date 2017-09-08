@@ -196,14 +196,10 @@ A token is a single 'thing' passed to the postfix calculator.  It can be an oper
 using namespace std;
 
 int main() {
-	while(true) {
-    	string s;
-	    cin >> s;
-    	if(s == "") {
-        	break;
-        }
-	    cout << s << endl;
-	}
+    string s;
+    while (cin >> s) {
+        cout << s << endl;
+    }
     return 0;
 }
 ```
@@ -245,23 +241,6 @@ In the above execution, what was typed in was `+ 2 3 isn't 2150 great??` (the se
 
 ***NOTE:*** When hitting Control-D, you have to enter it *on it's own line*.  This means that you first have to hit Enter, then Control-D.
 
-Another way of accomplishing the above code to check if there is any more input is to use the `good()` method in cin (i.e., `cin.good()`):
-
-```
-#include <iostream>
-using namespace std;
-
-int main() {
-	while (cin.good()) {
-		string s;
-		cin >> s;
-		cout << s << endl;
-	}
-	return 0;
-}
-```
-They are two different ways of reading from stdin. In the former case, you use control-d to close stdin, whereas in the latter case, `cin.good()` takes care of that.
-
 ### Assumptions: ###
 
 1. Assume that the input, i.e. the postfix expression, is entered in on one line and that all numbers and operators are separated by a single space.  We will only provide you with valid input.
@@ -272,7 +251,7 @@ They are two different ways of reading from stdin. In the former case, you use c
 How should the program know when you are finished providing input?  There are a couple of ways to do this.
 
 - Only read in one line, and not accept any more input -- if you handle it this way, you will have to use the `getline()` method, but this is likely the harder way to deal with it.
-- Read in input until `cin.good()` method returns `false`; **this will require entering a Control-D at the end of the provided input** (i.e., enter a line of the postfix expression, hit Enter, and then hit Control-D).  The input we provide during the execution will provide the Control-D at the end of said input.
+- Read in input using the while(cin >> s) like loop shown above. **this will require entering a Control-D at the end of the provided input** (i.e., enter a line of the postfix expression, hit Enter, and then hit Control-D).  The input we provide during the execution will provide the Control-D at the end of said input.
 
 Either way is fine.  Our test scripts will send in all the input *on a single line*, followed by the Enter key; we will also provide a Control-D if necessary.  So whichever means you use to determine the end of your input is fine.
 
