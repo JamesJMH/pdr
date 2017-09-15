@@ -43,7 +43,7 @@
 ### Program and Data Representation
 &nbsp;
 <center><small>[Mark Floryan](http://www.cs.virginia.edu/~mrf8t) / [mrf8t@virginia.edu](mailto:mrf8t@virginia.edu)</small></center>
-<center><small>Repository: [github.com/markfloryan/pdr](http://github.com/markfloryan/pdr) / [&uarr;](index.html) / <a href="13-esoteric-pls.html?print-pdf"><img class="print" width="20" src="images/print-icon.png"></a></small></center>
+<center><small>Repository: [github.com/markfloryan/pdr](http://github.com/markfloryan/pdr) / [&uarr;](index.html) / <a href="01-cpp.html?print-pdf"><img class="print" width="20" src="images/print-icon.png"></a></small></center>
 &nbsp;  
 &nbsp;
 ## C++
@@ -1201,9 +1201,9 @@ Foo() {
 - Assume `int *x` has been declared
   - And `int y` is from user input
 - Consider these separate C++ lines of code:
-  - `x = new int[10]; // 80 bytes`
-  - `x = new int;     // 8 bytes`
-  - `x = new int[y];  // y*8 bytes`
+  - `x = new int[10]; // 40 bytes`
+  - `x = new int;     // 4 bytes`
+  - `x = new int[y];  // y*4 bytes`
 - When they are deleted, how does C++ know how much memory to free up?
 </script></section>
 
